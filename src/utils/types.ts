@@ -29,6 +29,7 @@ export interface StatisticRow {
   draw: number;
   lost: number;
   goalsFor: number;
+  playedGames: number;
 }
 
 export interface Standing {
