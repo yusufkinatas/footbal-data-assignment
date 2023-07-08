@@ -2,6 +2,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import { SWRConfig } from "swr";
 
+const FOOTBALL_API_TOKEN = process.env.NEXT_PUBLIC_FOOTBALL_API_TOKEN ?? "";
+
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <SWRConfig
@@ -9,7 +11,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         fetcher: (url) =>
           fetch(`/api${url}`, {
             headers: {
-              "X-Auth-Token": "3f3bbf423ffa43288a918d5a957d93ce",
+              "X-Auth-Token": FOOTBALL_API_TOKEN,
             },
           }).then((res) => res.json()),
       }}
