@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <Container py="10">
       <Stack gap={5}>
-        <Heading textAlign="center">Football Data Assignment</Heading>
+        <Heading textAlign="center">⚽ Football Data Assignment</Heading>
 
         {loading ? (
           <LoadingIndicator />

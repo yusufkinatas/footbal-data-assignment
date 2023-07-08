@@ -50,7 +50,7 @@ export const TeamCard = ({
             {team.address ?? "unknown"}
           </Text>
           <Text>
-            <b>Founded At:</b> {team.founded ?? "unknown"}
+            <b>Founded in:</b> {team.founded ?? "unknown"}
           </Text>
           {onSelect && (
             <Button
@@ -58,7 +58,7 @@ export const TeamCard = ({
               size="sm"
               rightIcon={<ArrowForwardIcon />}
             >
-              See Statistics
+              See statistics
             </Button>
           )}
         </Stack>
