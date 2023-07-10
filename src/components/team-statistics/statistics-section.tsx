@@ -1,4 +1,4 @@
-import { Stack, Text } from "@chakra-ui/react";
+import { Stack, Text, Theme, useTheme } from "@chakra-ui/react";
 import { PieChart } from "react-minimal-pie-chart";
 
 import { StatisticRow } from "@/utils/types";
@@ -10,6 +10,8 @@ export const StatisticsSection = ({
 }) => {
   const averageGoals = Math.floor((goalsFor / playedGames) * 100) / 100;
 
+  const { colors } = useTheme<Theme>();
+
   return (
     <Stack>
       <Text>
@@ -19,9 +21,9 @@ export const StatisticsSection = ({
       <Text fontWeight="bold">Games Played:</Text>
       <PieChart
         data={[
-          { title: "Draw", value: draw, color: "orange" },
-          { title: "Lost", value: lost, color: "red" },
-          { title: "Won", value: won, color: "green" },
+          { title: "Draw", value: draw, color: colors.yellow[500] },
+          { title: "Lost", value: lost, color: colors.red[500] },
+          { title: "Won", value: won, color: colors.green[500] },
         ]}
         label={({ dataEntry }) => `${dataEntry.title} (${dataEntry.value})`}
         style={{
